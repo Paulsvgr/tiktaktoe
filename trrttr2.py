@@ -113,8 +113,9 @@ class ComputerCalculator:
     def random_move(self):
         corner_left = [1, 3, 7, 9]
         corner_lefts = list(set(corner_left) & set(self.spot_left))
-        spot = random.choice(corner_lefts)
-        if not spot:
+        if corner_lefts:
+            spot = random.choice(corner_lefts)
+        else:
             spot = random.choice(self.spot_left)
         return spot
 
